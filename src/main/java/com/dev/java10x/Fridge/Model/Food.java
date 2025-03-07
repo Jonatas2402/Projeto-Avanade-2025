@@ -7,6 +7,7 @@ import java.time.LocalDate;
 //Essa classe é um modelo que será injetado no controlador.
 //O model é a representação de um objeto que será salvo no banco de dados, será como o objeto de negócio.
 //Aqui pe onde terá todas as informações do objeto.
+
 @Entity //Anotação que diz que essa classe é uma entidade do banco de dados.
 @Table(name = "food_table")//Anotação que diz que essa classe é uma tabela do banco de dados.
 public class Food {
