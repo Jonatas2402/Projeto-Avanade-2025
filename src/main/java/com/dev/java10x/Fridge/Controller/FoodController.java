@@ -8,11 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
-//Essa classe é um controlador do Spring Boot.
-//Essa classe serve como um ponto de entrada para a aplicação.
-//Onde terá varias rotas que serão acessadas pelo cliente.
-@RestController //Anotação que diz que essa classe é um controlador do Spring Boot.
-@RequestMapping("/food")//Essa anotação fará o mapeamento da rota.
+@RestController
+@RequestMapping("/food")
 public class FoodController {
     private final FoodService foodService;
 
@@ -20,16 +17,16 @@ public class FoodController {
         this.foodService = foodService;
     }
 
-    @GetMapping//Anotação que diz que esse método lista todos os alimentos.
+    @GetMapping()
     public List<Food> getAll() {
         return foodService.getAll();
     }
-    @PostMapping//Anotação que diz que esse método cria um alimento.
+    @PostMapping
     public Food create(@RequestBody Food food) {
         return foodService.save(food);
     }
-    @DeleteMapping("/{id}")//Anotação que diz que esse método deleta um alimento.
-    public void delete(@RequestParam Long id) {
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
         foodService.delete(id);
     }
 }

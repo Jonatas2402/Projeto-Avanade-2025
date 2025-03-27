@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service//Anotação que diz que essa classe é um serviço do Spring Boot.
+@Service
 public class FoodService {
 
     private final FoodRepository repository;

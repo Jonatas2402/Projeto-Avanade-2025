@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:avanade2025
     driver-class-name: org.h2.Driver
     username: avanade2025
     password:
@@ -19,3 +19,8 @@ spring:
     settings:
       web-allow-others: true
       trace: true
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
