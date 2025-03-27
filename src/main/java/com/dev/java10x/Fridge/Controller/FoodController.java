@@ -14,9 +14,6 @@ import java.util.List;
 @RestController //Anotação que diz que essa classe é um controlador do Spring Boot.
 @RequestMapping("/food")//Essa anotação fará o mapeamento da rota.
 public class FoodController {
-    //injeção de dependência.
-    //Iremos chamar o service para fazer a lógica de programação.
-    //Usaremos a anotação @Autowired para injetar a dependência ou podemos usar o construtor.
     private final FoodService foodService;
 
     public FoodController(FoodService foodService) {
@@ -30,5 +27,9 @@ public class FoodController {
     @PostMapping//Anotação que diz que esse método cria um alimento.
     public Food create(@RequestBody Food food) {
         return foodService.save(food);
+    }
+    @DeleteMapping("/{id}")//Anotação que diz que esse método deleta um alimento.
+    public void delete(@RequestParam Long id) {
+        foodService.delete(id);
     }
 }
